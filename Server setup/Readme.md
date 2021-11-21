@@ -88,7 +88,7 @@ PrivateTmp=true
 InaccessibleDirectories=/root /sys /srv -/opt /media -/lost+found
 ReadWriteDirectories=/var/minecraft/server
 WorkingDirectory=/var/minecraft/server
-ExecStart=/usr/bin/java -Xmx1G -jar server.jar nogui
+ExecStart=/usr/bin/java -Xms7G -Xmx15G -XX:ParallelGCThreads=6 -jar server.jar nogui
 
 [Install]
 WantedBy=multi-user.target
