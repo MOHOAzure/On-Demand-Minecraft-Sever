@@ -37,6 +37,10 @@ On-Demand Minecraft Sever established on AWS services with very low costs.
   * OS
     * Amazon Linux 2 AMI (HVM) - Kernel 5.10, SSD Volume Type
   * Use .pem for admin connection
+* IP and DNS
+  * Enable EIP on the machine
+  * (optional) Create a DNS by Route53, make an A record that mapping the EIP and the DNS
+  * Players could link to the server by the EIP or the DNS name
 * MC Server setup
   * Details: https://github.com/MOHOAzure/On-Demand-Minecraft-Sever/blob/main/Server%20setup/Readme.md
 * On-demand start server
