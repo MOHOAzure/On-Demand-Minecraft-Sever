@@ -57,5 +57,6 @@ exports.handler = async (event) => {
 * Record the URL of the API gateway
 
 ## Chatbot on Discord
+Details: https://github.com/MOHOAzure/Discord-chat-bot/blob/main/README.md
 
 ## Chatbot on TG
