@@ -27,12 +27,16 @@ On-Demand Minecraft Sever established on AWS services with very low costs.
   * Time for sleep, don't let player stay up late
 
 ## System Design
-* Machine AWS t3.xlarge
-  * vCPU: 4 
-  * Mem: 16 GB
-  * Net Bandwidth: 5 Gbps
-  * EBS Bandwidth: 2,780 Mbps
-  * On-Demand Price/hr: $0.1670
+* EC2
+  * Machine AWS t3.xlarge
+    * vCPU: 4 
+    * Mem: 16 GB
+    * Net Bandwidth: 5 Gbps
+    * EBS Bandwidth: 2,780 Mbps
+    * On-Demand Price/hr: $0.1670
+  * OS
+    * Amazon Linux 2 AMI (HVM) - Kernel 5.10, SSD Volume Type
+  * Use .pem for admin connection
 * MC Server setup
   * Details: https://github.com/MOHOAzure/On-Demand-Minecraft-Sever/blob/main/Server%20setup/Readme.md
 * On-demand start server
