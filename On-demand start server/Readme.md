@@ -60,3 +60,4 @@ exports.handler = async (event) => {
 Details: https://github.com/MOHOAzure/Discord-chat-bot/blob/main/README.md
 
 ## Chatbot on TG
+Details: https://github.com/MOHOAzure/Telegram-chat-bot-
