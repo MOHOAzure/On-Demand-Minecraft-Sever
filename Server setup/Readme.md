@@ -8,6 +8,7 @@
 * change to root account for ease of cmd
 
 ## Install Java 17
+* MC 1.18 is running on Java 17
 * Expected result
 ```
 openjdk 17.0.1 2021-10-19 LTS
@@ -33,6 +34,11 @@ There should be a server.jar
 ```
 mkdir -p /opt/minecraft/server/
 cd /opt/minecraft/server
+
+# 1.18
+wget https://launcher.mojang.com/v1/objects/3cf24a8694aca6267883b17d934efacc5e44440d/server.jar
+
+# 1.17
 wget https://launcher.mojang.com/v1/objects/a16d67e5807f57fc4e550299cf20226194497dc2/server.jar
 ```
 
@@ -49,7 +55,9 @@ $ groupadd -r minecraft
 $ useradd -r -g minecraft -d "/var/minecraft" -s "/bin/bash" minecraft
 $ chown minecraft.minecraft -R /var/minecraft/
 $ 
-$ # create a system service file, the content is presented in the following section
+$ # create a system service & conf file, the content is presented in the following section
+$ mkdir /etc/systemd/system/minecraft.service.d
+$ nano /etc/systemd/system/minecraft.service/conf.conf
 $ nano /etc/systemd/system/minecraft.service
 $ 
 $ chmod 644 /etc/systemd/system/minecraft.service
@@ -63,6 +71,14 @@ $ systemctl stop minecraft
 $
 $ # optional : check server could be auto started
 $ # stop the machine then start it again, login server via MC launcher
+```
+
+* service configuration file
+```
+[Service]
+Environment="MINHEAP=2048m"
+Environment="MAXHEAP=3072m"
+Environment="THREADS=6"
 ```
 
 * minecraft.service
@@ -79,16 +95,24 @@ Group=minecraft
 Nice=5
 KillMode=control-group
 SuccessExitStatus=0 1
-
+EnvironmentFile=/etc/systemd/system/minecraft.service.d/conf.conf
 ProtectHome=true
 ProtectSystem=full
 PrivateDevices=true
 NoNewPrivileges=true
 PrivateTmp=true
 InaccessibleDirectories=/root /sys /srv -/opt /media -/lost+found
-ReadWriteDirectories=/var/minecraft/server
-WorkingDirectory=/var/minecraft/server
-ExecStart=/usr/bin/java -Xms7G -Xmx15G -XX:ParallelGCThreads=6 -jar server.jar nogui
+
+# 1.18
+ReadWriteDirectories=/var/minecraft/server/1_18
+WorkingDirectory=/var/minecraft/server/1_18
+ExecStart=/usr/bin/java -Xms${MINHEAP} -Xmx${MAXHEAP} -XX:ParallelGCThreads=${THREADS} -jar server.jar nogui
+
+
+# 1.17
+#ReadWriteDirectories=/var/minecraft/server/1_17
+#WorkingDirectory=/var/minecraft/server/1_17
+#ExecStart=/usr/bin/java -Xms${MINHEAP} -Xmx${MAXHEAP} -XX:ParallelGCThreads=${THREADS} -jar server.jar nogui
 
 [Install]
 WantedBy=multi-user.target
