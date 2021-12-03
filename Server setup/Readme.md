@@ -73,50 +73,8 @@ $ # optional : check server could be auto started
 $ # stop the machine then start it again, login server via MC launcher
 ```
 
-* service configuration file
-```
-[Service]
-Environment="MINHEAP=2048m"
-Environment="MAXHEAP=3072m"
-Environment="THREADS=6"
-```
-
-* minecraft.service
-```
-[Unit]
-Description=Minecraft Server
-
-Wants=network.target
-After=network.target
-
-[Service]
-User=minecraft
-Group=minecraft
-Nice=5
-KillMode=control-group
-SuccessExitStatus=0 1
-EnvironmentFile=/etc/systemd/system/minecraft.service.d/conf.conf
-ProtectHome=true
-ProtectSystem=full
-PrivateDevices=true
-NoNewPrivileges=true
-PrivateTmp=true
-InaccessibleDirectories=/root /sys /srv -/opt /media -/lost+found
-
-# 1.18
-ReadWriteDirectories=/var/minecraft/server/1_18
-WorkingDirectory=/var/minecraft/server/1_18
-ExecStart=/usr/bin/java -Xms${MINHEAP} -Xmx${MAXHEAP} -XX:ParallelGCThreads=${THREADS} -jar server.jar nogui
-
-
-# 1.17
-#ReadWriteDirectories=/var/minecraft/server/1_17
-#WorkingDirectory=/var/minecraft/server/1_17
-#ExecStart=/usr/bin/java -Xms${MINHEAP} -Xmx${MAXHEAP} -XX:ParallelGCThreads=${THREADS} -jar server.jar nogui
-
-[Install]
-WantedBy=multi-user.target
-```
+* [minecraft.service](https://github.com/MOHOAzure/On-Demand-Minecraft-Sever/blob/main/Server%20setup/minecraft.service)
+* [service configuration file](https://github.com/MOHOAzure/On-Demand-Minecraft-Sever/blob/main/Server%20setup/conf.conf)
 
 ## Ref
 * minecraft-systemd-service-file, WilhelmRoscher, https://github.com/WilhelmRoscher/minecraft-systemd-service-file
