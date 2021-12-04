@@ -49,3 +49,8 @@ On-Demand Minecraft Sever established on AWS services with very low costs.
 * Auto stop server
   * No player is playing & Time to sleep
   * Details: https://github.com/MOHOAzure/On-Demand-Minecraft-Sever/tree/main/Auto%20stop%20server
+* Backup
+  * Routine
+  * Just before shutdown
+  * EBS snapshot
+  * Details: https://github.com/MOHOAzure/On-Demand-Minecraft-Sever/tree/main/Backup
