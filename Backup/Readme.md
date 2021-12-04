@@ -2,15 +2,19 @@
 * Zip all server data and store it on S3, which is located in a region other than original one
 * Download zipped server data from S3 and unzip it
 
-## Prerequisite
-* A cron job is ready to automatically shutdown server
-* [The script](https://github.com/MOHOAzure/On-Demand-Minecraft-Sever/blob/main/Auto%20stop%20server/shutdown.sh)
-
 ## Backup
-* [backup script in shutdown.sh](https://github.com/MOHOAzure/On-Demand-Minecraft-Sever/blob/main/Backup/shutdown_backup.sh)
+* [roution](https://github.com/MOHOAzure/On-Demand-Minecraft-Sever/blob/main/Backup/backup.sh)
+* [just before shutdown](https://github.com/MOHOAzure/On-Demand-Minecraft-Sever/blob/main/Backup/shutdown_backup.sh)
 * Send to S3
+  * optional: turn on versioning
 ```
 aws s3 cp zip file} s3://{BUCKET_NAME}/{PREFIX}/{KEY:zip name}
+```
+
+## cron job
+```
+0 */1 * * * /var/minecraft/server/1_18/scripts/shutdown_backup.sh
+0 */1 * * * /var/minecraft/server/1_18/scripts/backup.sh
 ```
 
 ## Restore
