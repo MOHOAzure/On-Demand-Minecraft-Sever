@@ -10,6 +10,13 @@ On-Demand Minecraft Sever established on AWS services with very low costs.
 * no lag, no data loss
 * reduce costs at much as possible
 
+# Context Diagram
+* How players interact with system
+![Cxt](https://github.com/MOHOAzure/On-Demand-Minecraft-Sever/blob/main/Context.drawio.png)
+
+* Details behind chatbot and services
+![](https://github.com/MOHOAzure/On-Demand-Minecraft-Sever/blob/main/Bot.png)
+
 ## System Requirement
 * Machine
   * ref: https://apexminecrafthosting.com/how-much-ram-do-i-need-for-my-server
@@ -29,7 +36,7 @@ On-Demand Minecraft Sever established on AWS services with very low costs.
 ## System Design
 * EC2
   * Machine AWS t3.xlarge
-    * vCPU: 4 
+    * vCPU: 4 cores
     * Mem: 16 GB
     * Net Bandwidth: 5 Gbps
     * EBS Bandwidth: 2,780 Mbps
