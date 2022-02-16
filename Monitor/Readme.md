@@ -15,11 +15,13 @@
   * Subscription: The Lambda
 * Lambda
   * Send alerts to telegram
-  * How to setup chatbot: https://github.com/MOHOAzure/Telegram-chat-bot-
+  * How to setup telegram chatbot: https://github.com/MOHOAzure/Telegram-chat-bot-
 
 ### Lambda
 #### Code
-Details: 
+* Python 3.8
+* Dependency: telebot
+* Details: https://github.com/MOHOAzure/On-Demand-Minecraft-Sever/tree/performance/Monitor/Lambda/tg-bot-server-watcher
 #### Environment variables
 * INSTANCE_ID
   * Instance under watch
