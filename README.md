@@ -15,7 +15,7 @@ On-Demand Minecraft Sever established on AWS services with very low costs.
 ![Cxt](https://github.com/MOHOAzure/On-Demand-Minecraft-Sever/blob/main/Context.drawio.png)
 
 * Details behind chatbot and services
-![](https://github.com/MOHOAzure/On-Demand-Minecraft-Sever/blob/main/Bot.png)
+![Bot](https://github.com/MOHOAzure/On-Demand-Minecraft-Sever/blob/main/Bot.png)
 
 ## System Requirement
 * Machine
@@ -61,3 +61,41 @@ On-Demand Minecraft Sever established on AWS services with very low costs.
   * Just before shutdown
   * EBS snapshot
   * Details: https://github.com/MOHOAzure/On-Demand-Minecraft-Sever/tree/main/Backup
+
+## Cost
+* The server runs in 2021 December and 2022 January. The following is cost in each month.
+
+* 2021 December
+  * Total (USD): 126.11
+  * Server's CPU, memory and disk are the main source of cost
+  * Network fee for backup data tranmission the secondary source of cost
+  * Cost of chatbot is almost 0 due to chatbot is deployed to AWS Lambda as an event-trigger service
+  * Details: https://github.com/MOHOAzure/On-Demand-Minecraft-Sever/tree/main/Cost202112
+
+    | Cost Type                     | Sub Total (USD) | %       |
+    | ----------------------------- | --------------- | ------- |
+    | Server (CPU+MEM+Disk)         | 91.08           | 71.83%  |
+    | DNS                           | 0.5             | 0.40%   |
+    | Backup (storage+transmission) | 33.89           | 26.87%  |
+    | Monitor                       | 1.14            | 0.90%   |
+    | TOTAL                         | 126.11          | 100.00% |
+
+    ![Cost-202112](https://github.com/MOHOAzure/On-Demand-Minecraft-Sever/blob/main/Cost/Monthly%20Report%20-%20202112.png)
+
+* 2022 January
+  * Total (USD): 20.95
+  * Server's CPU, memory and disk are the main source of cost
+  * Cost of chatbot is almost 0
+  * Backup fee is reduced because the simplified backup mechanism (no more cross-region backup)
+  * After a month, the number of players and the time of play are both reduced
+  * Details: https://github.com/MOHOAzure/On-Demand-Minecraft-Sever/tree/main/Cost202201
+  
+    | Cost Type                     | Sub Total (USD) | %       |
+    | ----------------------------- | --------------- | ------- |
+    | Server (CPU+MEM+Disk)         | 13.78           | 65.78%  |
+    | DNS                           | 0.5             | 2.39%   |
+    | Backup (storage+transmission) | 5.2             | 24.82%  |
+    | Monitor                       | 1.47            | 7.02%   |
+    | TOTAL                         | 20.95           | 100.00% |
+
+    ![Cost-202112](https://github.com/MOHOAzure/On-Demand-Minecraft-Sever/blob/main/Cost/Monthly%20Report%20-%20202201.png)
