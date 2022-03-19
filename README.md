@@ -70,7 +70,7 @@ On-Demand Minecraft Sever established on AWS services with very low costs.
   * Server's CPU, memory and disk are the main source of cost
   * Network fee for backup data tranmission the secondary source of cost
   * Cost of chatbot is almost 0 due to chatbot is deployed to AWS Lambda as an event-trigger service
-  * Details: https://github.com/MOHOAzure/On-Demand-Minecraft-Sever/tree/main/Cost202112
+  * Details: https://github.com/MOHOAzure/On-Demand-Minecraft-Sever/blob/main/Cost/202112.md
 
     | Cost Type                     | Sub Total (USD) | %       |
     | ----------------------------- | --------------- | ------- |
@@ -88,7 +88,7 @@ On-Demand Minecraft Sever established on AWS services with very low costs.
   * Cost of chatbot is almost 0
   * Backup fee is reduced because the simplified backup mechanism (no more cross-region backup)
   * After a month, the number of players and the time of play are both reduced
-  * Details: https://github.com/MOHOAzure/On-Demand-Minecraft-Sever/tree/main/Cost202201
+  * Details: https://github.com/MOHOAzure/On-Demand-Minecraft-Sever/blob/main/Cost/202201.md
   
     | Cost Type                     | Sub Total (USD) | %       |
     | ----------------------------- | --------------- | ------- |
