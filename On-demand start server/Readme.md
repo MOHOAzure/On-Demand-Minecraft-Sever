@@ -1,7 +1,11 @@
 # On-demand start server
 
-## API call
-* Lambda + API gateway
+## Mechanism
+* Lambda + API gateway + Chatbot
+* Lambda for wake up server
+* API gateway provides a public entry to Lambda
+* Chatbot provides a easy way to interact with API gateway
+* Therefore, players could request the Chatbot to start game server for them at anytime
 
 ### Lambda
 * Node.js 14
@@ -57,7 +61,7 @@ exports.handler = async (event) => {
 * Record the URL of the API gateway
 
 ## Chatbot on Discord
-Details: https://github.com/MOHOAzure/Discord-chat-bot/blob/main/README.md
+Details: https://github.com/MOHOAzure/Discord-chat-bot
 
 ## Chatbot on TG
-Details: https://github.com/MOHOAzure/Telegram-chat-bot-
+Details: https://github.com/MOHOAzure/Telegram-chat-bot
