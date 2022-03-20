@@ -65,13 +65,13 @@ On-Demand Minecraft Sever established on AWS services with very low costs.
 ## Screenshot
 * Start server
 
-  ![](https://github.com/MOHOAzure/On-Demand-Minecraft-Sever/blob/screenshot/Screenshot/player%20interact%20with%20bot.png)
+  ![](https://github.com/MOHOAzure/On-Demand-Minecraft-Sever/blob/main/Screenshot/player%20interact%20with%20bot.png)
 
 * Day-1
   
-  ![](https://github.com/MOHOAzure/On-Demand-Minecraft-Sever/blob/screenshot/Screenshot/2021-12-01_22.23.48.png)
+  ![](https://github.com/MOHOAzure/On-Demand-Minecraft-Sever/blob/main/Screenshot/2021-12-01_22.23.48.png)
 
-* More: https://github.com/MOHOAzure/On-Demand-Minecraft-Sever/blob/screenshot/Screenshot/Readme.md
+* More: https://github.com/MOHOAzure/On-Demand-Minecraft-Sever/tree/main/Screenshot
 
 ## Cost
 * The server runs in 2021 December and 2022 January. The following is cost in each month.
